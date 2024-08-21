@@ -1,0 +1,170 @@
+body{
+       background-color: #ebf0f5;
+}
+/* .dashboard{
+       min-height: 1100px;
+} */
+.dashboard .tp-title{
+       font-size: 20px;
+       margin-top: 20px;
+       margin-left: 25px;
+}
+.welcome{
+       background-color: #0f172a;
+       min-height: 200px;
+       border-radius: 10px;
+       width: 97.3%;
+       margin-top: 20px;
+       margin-left: 20px;
+}
+.welcome .tp-dashboard-title-pre{
+       font-size: 18px;
+       color: rgb(226, 232, 240);
+       opacity: 1;
+       padding-top: 25px;
+       padding-left: 20px;
+}
+.welcome .tp-dashboard-title{
+       color: rgb(148, 163, 184);
+       margin-top: 15px;
+       margin-left: 20px;
+       width: 950px;
+}
+.welcome .tp-dashboard-btn{
+       border: none;
+       outline: none;
+       border-radius: 5px;
+       height: 40px;
+       font-size: 15px;
+       color: white;
+       background-color: rgb(59, 130, 246);
+       margin-top: 10px;
+       margin-left: 20px;
+       padding-left: 20px;
+       padding-right: 20px;
+}
+.welcome img{
+       position: absolute;
+       top: 120px;
+       left: 1150px;
+       width: 150px;
+}
+.calculations .calc{
+       text-align: center;
+       width: 350px;
+       height: 200px;
+       background-color: white;
+       border-radius: 10px;
+       margin-top: 20px;
+       margin-left: 20px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       -o-border-radius: 10px;
+}
+.calculations .calc .tp-icons img{
+       width: 80px;
+       margin-top: 20px;
+}
+.calculations .calc .tp-title-pre{
+       margin-top: 20px;
+       font-size: 20px;
+       font-weight: 700;
+       color: rgb(30, 41, 59);
+}
+.calculations .calc .tp-title{
+       margin-top: 10px;
+       margin-left: 5px;
+       font-size: 16px;
+       color: rgb(100, 116, 139);
+}
+.calculations .calc2{
+       margin-top: -200px;
+       margin-left: 395px;
+}
+.calculations .calc3{
+       margin-top: -200px;
+       margin-left: 770px;
+}
+.calculations .calc4{
+       margin-top: -200px;
+       margin-left: 1145px;
+}
+.admin_form{
+       background-color: white;
+       min-height: 500px;
+       border-radius: 10px;
+       width: 97.3%;
+       margin-top: 50px;
+       margin-left: 20px;
+}
+.admin_form .tp-title-pre{
+       color: rgb(30, 41, 59);
+       font-size: 20px;
+       padding-top: 20px;
+       margin-left: 20px;      
+}
+.admin_form .tp-title{
+       color: rgb(100, 116, 139);
+       font-size: 16px;
+       margin-left: 20px;      
+}
+.admin_form form input[type=text]{
+       width: 97%;
+       padding-left: 10px;
+       margin-left: 20px;
+       height: 50px;
+       border: 2px solid #e1eaea;
+}
+.admin_form form input[type=email]{
+       width: 97%;
+       padding-left: 10px;
+       margin-left: 20px;
+       height: 50px;
+       border: 2px solid #e1eaea;
+}
+.admin_form form input[type=password]{
+       width: 97%;
+       padding-left: 10px;
+       margin-left: 20px;
+       height: 50px;
+       border: 2px solid #e1eaea;
+}
+.admin_form form input[type=submit]{
+       width: 97%;
+       margin-top: 40px;
+       padding-left: 10px;
+       margin-left: 20px;
+       height: 50px;
+       border: none;
+       outline: none;
+       border-radius: 5px;
+       background-color: rgb(30, 41, 59);
+       color: white;
+       font-size: 20px;
+       font-weight: 600;
+       -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+       -ms-border-radius: 5px;
+       -o-border-radius: 5px;
+}
+.admin_form form select{
+       width: 97%;
+       margin-top: 20px;
+       padding-left: 10px;
+       margin-left: 20px;
+       height: 50px;
+       color: rgb(100, 116, 139);
+       border: 2px solid #e1eaea;
+}
+.admin_form form input{
+       margin-top: 20px;
+}
+.admin_table{
+       background-color: white;
+       min-height: auto;
+       margin-top: 40px;
+       width: 1475px;
+       margin-left: 20px;
+       border-radius: 10px;
+}

@@ -1,0 +1,355 @@
+body{
+       background-color: #ebf0f5;
+}
+.profile{
+       min-height: 1050px;
+}
+.profile1{
+       background-color: white;
+       min-height: 380px;
+       width: 98%;
+       /* position: absolute;
+       top: 90px;
+       left: 10px; */
+       margin-top: 15px;
+       margin-left: 15px;
+       border-radius: 10px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       -o-border-radius: 10px;
+}
+.profile1 img{
+       width: 100px;
+       margin-top: 10px;
+       margin-left: 10px;
+}
+.profile .tp-title-pre{
+       margin-top: -80px;
+       font-size: 23px;
+       color: rgba(30, 41, 59, 1);
+       margin-left: 170px;
+}
+.profile1 .check{
+       width: 15px;
+       margin-top: -75px;
+       margin-left: 285px;
+}
+.profile1 .tp-title1 img{
+       width: 17px;
+       margin-top: -3px;
+}
+.tp-title1{
+       color: #6e7d93;
+       margin-top: -40px;
+       margin-left: 150px;
+
+}
+.title2{
+       color: #6e7d93;
+       margin-top: -40px;
+       margin-left: 300px;
+
+}
+.profile1 ul li{
+       display: flex;
+       list-style: none;
+}
+.profile1 ul li .button1{
+       margin-left: 100px;
+       text-align: center;
+       border: none;
+       background-color: white;
+       border-right: 0.5px solid;
+       width: 150px;
+       height: 50px;
+       color:#6e7d93;
+       border-color: rgb(191, 191, 192);
+}
+.profile1 ul li .button2{
+       margin-top: -50px;
+       margin-left: 250px;
+       text-align: center;
+       border: none;
+       background-color: white;
+       border-right: 0.5px solid;
+       width: 150px;
+       height: 50px;
+       color:#6e7d93;
+       border-color: rgb(191, 191, 192);
+}
+.profile1 ul li .button3{
+       margin-top: -50px;
+       margin-left: 400px;
+       text-align: center;
+       border: none;
+       background-color: white;
+       width: 150px;
+       height: 50px;
+       color:#6e7d93;
+       border-color: rgb(191, 191, 192);
+}
+.profile1 ul li button p span{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       font-size: 20px;
+}
+.profile1 .tp-description{
+       margin-left: 170px;
+       color: #6e7d93;
+       font-size: 16px;
+}
+.profile1 .fa-facebook-f{
+       color: #0ea5e9;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(224, 242, 254);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-instagram{
+       color: #ec4899;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(252, 231, 243);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-globe{
+       color: #ef4444;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(254, 226, 226);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-linkedin-in{
+       color: #3b82f6;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(219, 234, 254);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-dribbble{
+       color: #ed529e;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(252, 231, 243);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-github{
+       color: #64748b;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(241, 245, 249);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-envelope{
+       color: #64748b;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(241, 245, 249);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .fa-ellipsis{
+       color: #64748b;
+       width: 40px;
+       height: 40px;
+       font-size: 20px;
+       padding-top: 10px;
+       padding-left: 10px;
+       border-radius: 7px;
+       background-color: rgb(241, 245, 249);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.profile1 .hire{
+       color: white;
+       font-style: normal;
+       font-size: 14px;
+       width: 70px;
+       height: 35px;
+       border-radius: 7px;
+       border: none;
+       background-color: rgb(59, 130, 246);
+       -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+       -ms-border-radius: 7px;
+       -o-border-radius: 7px;
+}
+.last_desc{
+       margin-top: 20px;
+       margin-left: 10px;
+}
+.social_links{
+       margin-left: 170px;
+}
+.overview{
+       background-color: white;
+       min-height: 222px;
+       width: 98%;
+       margin-top: 15px;
+       margin-left: 15px;
+       border-radius: 10px;
+}
+.overview .over{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       padding-top: 20px;
+}
+.overview .tp-overview-title{
+       margin-left: 20px;
+       width: 1380px;
+       color: rgb(100, 116, 139);
+       font-weight: 500;
+}
+.personal_info{
+       background-color: white;
+       min-height: 363px;
+       width: 98%;
+       margin-top: 15px;
+       margin-left: 15px;
+       border-radius: 10px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       -o-border-radius: 10px;
+}
+.personal_info .PI{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       padding-top: 20px;
+}
+.personal_info .D{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       padding-top: 20px;
+       font-size: 15.5px;
+}
+.personal_info .PN{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .BOD{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .W{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .E{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .L{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .JD{
+       color: rgba(30, 41, 59, 1);
+       font-weight: 600;
+       margin-left: 20px;
+       font-size: 15.5px;
+}
+.personal_info .ans{
+       position: absolute;
+       font-size: 15.5px;
+       color: rgb(100, 116, 139);
+}
+.personal_info .ans1{
+       text-align: left;
+       top: 805px;
+       left: 1300px;
+}
+.personal_info .ans2{
+       text-align: left;
+       top: 845px;
+       left: 1315px;
+}
+.personal_info .ans3{
+       text-align: left;
+       top: 885px;
+       left: 1320px;
+}
+.personal_info .ans4{
+       text-align: left;
+       top: 920px;
+       left: 1260px;
+}
+.personal_info .ans5{
+       text-align: left;
+       top: 960px;
+       left: 1230px;
+}
+.personal_info .ans6{
+       text-align: left;
+       top: 1000px;
+       left: 1255px;
+}
+.personal_info .ans7{
+       text-align: left;
+       top: 1040px;
+       left: 1325px;
+}

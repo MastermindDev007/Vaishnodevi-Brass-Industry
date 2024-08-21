@@ -1,0 +1,497 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.container1{
+    background-color: black;
+    padding-top: 75px;
+}
+.container2{
+    background-color: white;
+    padding-top: 60px;
+}
+.b1{
+    font-weight: 600;    
+    color: white;
+}
+.p1{
+	position: absolute;
+	top: 15px;
+	left: 65px;
+}
+.p2{
+	position: absolute;
+	top: 15px;
+	left: 265px;
+}
+.p3{
+	display: inline-block;
+	padding-left: 20px;
+	position: absolute;
+	/* stop: 25px;
+	left: 1055px; */
+}
+.p3 a {
+	position: relative;
+	top: -50px;
+	left: 1300px;
+	/* display: inline-block; */
+	padding: 10px 20px;
+	border: 2px solid #fefefe;
+	text-transform: uppercase;
+	color: #fefefe;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 16px;
+   }
+   
+   .p3 a::before {
+	content: '';
+	position: absolute;
+	top: 6px;
+	left: -2px;
+	width: calc(100% + 4px);
+	height: calc(100% - 12px);
+	background-color: #212121;
+	transition: 0.3s ease-in-out;
+	transform: scaleY(1);
+   }
+   
+   .p3 a:hover::before {
+	transform: scaleY(0);
+   }
+   
+   .p3 a::after {
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: -2px;
+	height: calc(100% + 4px);
+	width: calc(100% - 12px);
+	background-color: #212121;
+	transition: 0.3s ease-in-out;
+	transform: scaleX(1);
+	transition-delay: 0.5s;
+   }
+   
+   .p3 a:hover::after {
+	transform: scaleX(0);
+   }
+   
+   .p3 a span {
+	position: relative;
+	z-index: 3;
+   }
+   
+   .p3 button {
+	border: none;
+   }
+.b1{
+	padding-left: 7.5px;
+}
+.header_logo{
+	position: absolute;
+	top: 97.5px;
+	left: 79px;
+	width: 250px;
+}
+.home{
+	position: absolute;
+	top: -30px;
+	left: 400px;
+}
+.about{
+	position: absolute;
+	top: -30px;
+	left: 468px;
+}
+/* .product{
+	position: absolute;
+	top: -30px;
+	left: 540px;
+} */
+.quality{
+	position: absolute;
+	top: -30px;
+	left: 645px;
+}
+.inquiry{
+	position: absolute;
+	top: -30px;
+	left: 725px;
+}
+.contact{
+	position: absolute;
+	top: -30px;
+	left: 800px;
+}
+.phone2{
+	font-size: 18px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
+.circle{
+	width: 57px;
+	height: 57px;
+	background-color: #F3B44B;
+	border-radius: 50px;
+	position: absolute;
+	top: 97.5px;
+	left: 1110px;
+}
+.p4{
+	width: 200px;
+	position: absolute;
+	left: 1185px;
+	top: 97.5px;
+}
+.span3{
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 32px;
+}
+.span3 a{
+	text-decoration: none;
+	color: black;
+}
+.span3 a:hover{
+	color: #F3B44B;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+.navbar a{
+	padding-top: 8px;
+	margin-left: 9px;
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+}
+.menubar:hover{
+	color: #F3B44B;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+}
+.dropbtn {
+	width: 200px;
+	position: relative;
+	top: -30px;
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+	border: none;
+}
+
+.dropdown {
+	position: relative;
+	left: 540px;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 200px;
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropbtn:hover{color: #F3B44B;}
+
+.dropdown-content a:hover {color: #F3B44B; transition: 0.3s;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.sidenavbar{
+	display: none;
+}
+
+@media only screen and (max-width:768px){
+	*{
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		font-family: 'Kumbh Sans', sans-serif;
+	}
+	.container1{
+		background-color: black;
+		padding-top: 75px;
+		display: none;
+	}
+	.container2{
+		background-color: white;
+		padding-top: 140px;
+		width: 179%;
+	}
+	.container2{
+		position: sticky;
+		z-index: 999;
+	}
+	.dashes{
+		position: absolute;
+		top: -70px;
+		left: 1250px;
+		font-size: 54px;
+	}
+	.header_logo{
+		position: absolute;
+		top: 40px;
+		left: 65px;
+		width: 450px;
+	}
+	.home{
+		position: absolute;
+		top: -30px;
+		left: 400px;
+	}
+	.about{
+		position: absolute;
+		top: -30px;
+		left: 468px;
+	}
+	.product{
+		position: absolute;
+		top: -30px;
+		left: 540px;
+	}
+	.quality{
+		position: absolute;
+		top: -30px;
+		left: 645px;
+	}
+	.inquiry{
+		position: absolute;
+		top: -30px;
+		left: 725px;
+	}
+	.contact{
+		position: absolute;
+		top: -30px;
+		left: 800px;
+	}
+	.phone2{
+		font-size: 18px;
+		position: absolute;
+		left: 8px;
+		top: 8px;
+	}
+	.circle{
+		width: 57px;
+		height: 57px;
+		background-color: #F3B44B;
+		border-radius: 50px;
+		position: absolute;
+		top: 22px;
+		left: 1110px;
+	}
+	.p4{
+		width: 200px;
+		position: absolute;
+		left: 1185px;
+		top: 20px;
+	}
+	.navbar2{
+		display: none;
+	}
+	.span3{
+		font-size: 24px;
+		font-weight: 700;
+		padding-top: 32px;
+	}
+	.span3:hover{
+		color: #F3B44B;
+		transition: 0.3s;
+		-webkit-transition: 0.3s;
+		-moz-transition: 0.3s;
+		-ms-transition: 0.3s;
+		-o-transition: 0.3s;
+	}
+	.navbar a{
+		padding-top: 8px;
+		margin-left: 9px;
+		text-decoration: none;
+		color: black;
+		font-weight: 700;
+	}
+	.menubar{
+		display: none;
+	}
+	.menubar:hover{
+		color: #F3B44B;
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		-moz-transition: 0.5s;
+		-ms-transition: 0.5s;
+		-o-transition: 0.5s;
+	}
+	.dropbtn {
+		width: 200px;
+		position: relative;
+		top: -30px;
+		text-decoration: none;
+		color: black;
+		font-size: 16px;
+		border: none;
+		display: none;
+	}
+	.w-50{
+		width: 52%!important;
+	}
+	.dropdown {
+		position: relative;
+		left: 540px;
+		display: inline-block;
+	}
+	.sidenav_image{
+		width: 505px;
+		padding-top: 55px;
+		padding-left: 55px;
+	}
+	.offcanvas{
+		width: 70%;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: white;
+		min-width: 200px;
+		z-index: 1;
+	}
+	.btn-close{
+		display: inline-block;
+		font-size: 26px;
+		height: 60px;
+		width: 60px;
+		position: absolute;
+		left: 585px;
+		top: 70px;
+		line-height: 40px;
+		background-color: #d3d2d2;
+	}
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+	.list_in_sidemenu ul li a{
+		text-decoration: none;
+		color: black;
+		font-weight: lighter;
+	}
+	.list_in_sidemenu{
+		padding-top: 20px;
+	}
+	.list_in_sidemenu ul li{
+		font-size: 28px;
+		border-bottom: 1px solid rgba(2, 11, 24, 0.1);
+		padding-top: 20px;
+		width: 550px;
+		padding-bottom: 20px;
+	}
+	.dropbtn:hover{color: #F3B44B;}
+	
+	.dropdown-content a:hover {color: #F3B44B; transition: 0.3s;}
+	
+	.dropdown:hover .dropdown-content {display: block;}
+	.sidenavbar{
+		display: block;
+	}
+	.contact_details_in_sidebar{
+		padding-left: 20px;
+	}
+	.adderess{
+
+		font-size: 25px;
+	}
+	.gmail{
+		padding-top: 20px;
+		font-size: 25px;
+	}
+	.mob{
+		padding-top: 20px;
+		font-size: 25px;
+	}
+	.heading_in_sidebar{
+		font-size: 50px;
+		color: black;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	.sidenav_square{
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+		margin-right: 5px;
+		background: transparent;
+		transition: all 0.3s ease-in-out;
+		width: 60px;
+		height: 60px;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+	}
+	.face{
+		background-color: #4661C5;
+	}
+	.twit{
+		background-color: #4CCEF9;
+		position: relative;
+		left: 80px;
+		top: -65px;
+	}
+	.tube{
+		background-color: #ff0000;
+		position: relative;
+		left: 160px;
+		top: -130px;
+	}
+	.linked{
+		background-color: #0072b1;
+		position: relative;
+		left: 240px;
+		top: -195px;
+	}
+	.sidenav_facebook .fa-facebook{
+		position: relative;
+		top: -20px;
+		left: -55px;
+		color: black;
+	}
+	.sidenav_twitter .fa-twitter{
+		position: relative;
+		top: -85px;
+		left: -65px;
+		color: black;
+	}
+	.sidenav_youtube .fa-youtube{
+		position: relative;
+		top: -147px;
+		left: 105px;
+		font-size: 16px;
+		color: black;
+	}
+	.sidenav_linkedin .fa-linkedin-in{
+		position: relative;
+		top: -210px;
+		left: 55px;
+		font-size: 16px;
+		color: black;
+	}
+}

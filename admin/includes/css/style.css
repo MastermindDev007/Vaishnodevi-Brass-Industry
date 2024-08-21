@@ -1,0 +1,114 @@
+*{
+       box-sizing: border-box;
+       padding: 0;
+       margin: 0;
+       font-family: Arial, Helvetica, sans-serif;
+}
+.login .container1{
+       padding-top: 430px;
+       width: 100%;
+       background-color: #030e22;
+       position: relative;
+       top: 0;
+       left: 0;
+       border-bottom-left-radius: 40px;
+}
+body{
+       background-color: aliceblue;
+}
+.login .container2{
+       background-color: white;
+       position: absolute;
+       top: 145px;
+       left: 510px;
+       width: 445px;
+       height: 370px;
+       z-index: 999;
+       border-radius: 10px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       -o-border-radius: 10px;
+}
+.login .p1{
+       position: absolute;
+       top: 25px;
+       left: 25px;
+       font-size: 25px;
+       font-weight: bold;
+       color: #3c4858;
+}
+.login .p2{
+       color: #8492a6;
+       position: absolute;
+       top: 65px;
+       left: 25px;
+       font-size: 15px;
+       font-weight: lighter;
+}
+.login .lable1{
+       color: #3c4858;
+       font-size: small;
+       position: absolute;
+       top: 120px;
+       left: 25px;
+}
+.login input[type='email']{
+       width: 400px;
+       height: 50px;
+       border: 0.1px solid #e4eefd;
+       position: absolute;
+       top: 145px;
+       left: 25px;
+       padding-left: 20px;
+}
+.login input[type='email']:active{
+       border: 0.5 solid black;
+}
+.login .lable2{
+       color: #3c4858;
+       font-size: small;
+       position: absolute;
+       top: 210px;
+       left: 25px;
+}
+.login input[type='password']{
+       width: 400px;
+       height: 50px;
+       border: 0.1px solid #e4eefd;
+       position: absolute;
+       top: 235px;
+       left: 25px;
+       padding-left: 20px;
+}
+.login input[type='password']:active{
+       border: 0.5 solid black;
+}
+.login input[type='submit']{
+       width: 400px;
+       height: 50px;
+       border: none;
+       outline: none;
+       background-color: #030e22;
+       color: white;
+       position: absolute;
+       top: 300px;
+       left: 25px;
+       border-radius: 2px;
+}
+.login input[type='submit']:hover{
+       transition: 0.5s;
+       border-radius: 2px;
+       background-color: #5e00d9;
+       border-color: #5800cc;
+}
+.login .p3{
+       position: absolute;
+       top: 520px;
+       left: 520px;
+       color: #8492a6;
+       line-height: 1.7;
+       font-size: 14.5px;
+       font-weight: 400;
+       font-family: "Open Sans", sans-serif;
+}
