@@ -10,71 +10,46 @@ if (isset($_POST['add_category'])) {
 	move_uploaded_file($tmpname, $folder);
 	$target_dir = "assets/category/uploads1/";
 	$uploads = $target_dir;
-	$destination = "assets/category/destination1/";
-	$watermarkFile = "assets/category/watermark.png";
+
 	// Check if the file was uploaded without errors
 	if ($_FILES["category_image"]["error"] == UPLOAD_ERR_OK) {
 		$target_file = $target_dir . basename($_FILES["category_image"]["name"]);
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
 		// Check if the file is an image
 		$check = getimagesize($_FILES["category_image"]["tmp_name"]);
 		if ($check === false) {
 			echo "File is not an image.";
 			exit;
 		}
+
 		// Check file extension
 		if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png" && $imageFileType != "webp" && $imageFileType != "svg" && $imageFileType != "avif" && $imageFileType != "apng" && $imageFileType != "gif") {
 			echo "Sorry, only JPG, JPEG, PNG files are allowed.";
 			exit;
 		}
+
 		// Move uploaded file to destination directory
 		if (!move_uploaded_file($_FILES["category_image"]["tmp_name"], $target_file)) {
 			echo "Sorry, there was an error uploading your file.";
 			exit;
 		}
-		// Apply watermark
-		$watermark = imagecreatefrompng($watermarkFile);
-		if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-			$img = imagecreatefromjpeg($target_file);
-		}
-		elseif ($imageFileType == "png") {
-			$img = imagecreatefrompng($target_file);
-		}
-		else {
-			echo "Unsupported image format.";
-			exit;
-		}
-		$sx = imagesx($watermark);
-		$sy = imagesy($watermark);
-		$watermark_x = (imagesx($img) / 2) - ($sx / 2);
-		$watermark_y = (imagesy($img) / 2) - ($sy / 2);
-		$transparency = 50;
-		imagecopymerge($img, $watermark, $watermark_x, $watermark_y, 0, 0, $sx, $sy, $transparency);
-		// Save the watermarked image
-		$outputFile = $destination . basename($_FILES["category_image"]["name"]);
-		if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-			imagejpeg($img, $outputFile, 100);
-		}
-		elseif ($imageFileType == "png") {
-			imagepng($img, $outputFile, 9);
-		}
-		// Clean up resources
-		imagedestroy($img);
-		imagedestroy($watermark);
+
 		// Insert into database
-		$imagePath = $outputFile; // Store the path to the watermarked image
+		$imagePath = $target_file; // Store the path to the uploaded image
 		$st = "INSERT INTO `category`(`category_name`, `sub_category`, `category_image`, `description`) VALUES ('$category_name', '$sub_category','$imagePath', '$description')";
 		$res = mysqli_query($cn, $st) or die("Not Inserted");
+
 		// Redirect to a page where the user can view the uploaded image
 		header("location: http://localhost/vaishnodevi/admin/category.php");
 		exit; // Ensure that no further code is executed after the redirection
-	}
-	else {
+	} else {
 		echo "File upload error.";
 	}
 }
 mysqli_close($cn);
 ?>
+
 <?php include 'includes/php/dbcon.php';?>
 <!DOCTYPE html>
 <html lang="en">

@@ -11,9 +11,6 @@ if (isset($_POST['add_category'])) {
     $folder = "assets/category/uploads1/" . $filename;
 
     $target_dir = "assets/category/uploads1/";
-    $uploads = $target_dir;
-    $destination = "assets/category/destination1/";
-    $watermarkFile = "assets/category/watermark.png";
 
     // Check if the file was uploaded without errors
     if ($_FILES["category_image"]["error"] == UPLOAD_ERR_OK) {
@@ -39,38 +36,8 @@ if (isset($_POST['add_category'])) {
             exit;
         }
 
-        // Apply watermark
-        $watermark = imagecreatefrompng($watermarkFile);
-        if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-            $img = imagecreatefromjpeg($target_file);
-        } elseif ($imageFileType == "png") {
-            $img = imagecreatefrompng($target_file);
-        } else {
-            echo "Unsupported image format.";
-            exit;
-        }
-
-        $sx = imagesx($watermark);
-        $sy = imagesy($watermark);
-        $watermark_x = (imagesx($img) / 2) - ($sx / 2);
-        $watermark_y = (imagesy($img) / 2) - ($sy / 2);
-        $transparency = 50;
-        imagecopymerge($img, $watermark, $watermark_x, $watermark_y, 0, 0, $sx, $sy, $transparency);
-
-        // Save the watermarked image
-        $outputFile = $destination . basename($_FILES["category_image"]["name"]);
-        if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-            imagejpeg($img, $outputFile, 100);
-        } elseif ($imageFileType == "png") {
-            imagepng($img, $outputFile, 9);
-        }
-
-        // Clean up resources
-        imagedestroy($img);
-        imagedestroy($watermark);
-
         // Insert into database
-        $imagePath = $outputFile; // Store the path to the watermarked image
+        $imagePath = $target_file; // Store the path to the uploaded image
         $st = "INSERT INTO `product`(`product_name`, `category_name`, `sub_category_name`, `product_image`, `description`) VALUES ('$product_name', '$category_name', '$sub_category_name', '$imagePath', '$description')";
         $res = mysqli_query($cn, $st) or die("Not Inserted");
 
@@ -84,6 +51,7 @@ if (isset($_POST['add_category'])) {
 
 mysqli_close($cn);
 ?>
+
 
 
 <?php include 'includes/php/dbcon.php';?>

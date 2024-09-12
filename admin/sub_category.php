@@ -1,93 +1,57 @@
 <?php include 'includes/php/dbcon.php';?>
 <?php
 if (isset($_POST['add_sub_category'])) {
-       $sub_category_name = $_POST['sub_category_name'];
-       $category_name = $_POST['category_name'];
-       $description = $_POST['description'];
+    $sub_category_name = $_POST['sub_category_name'];
+    $category_name = $_POST['category_name'];
+    $description = $_POST['description'];
 
-	$filename = $_FILES["sub_category_image"]["name"];
-	$tmpname = $_FILES["sub_category_image"]["tmp_name"];
-	$folder = "../assets/category/uploads1/".$filename;
-	move_uploaded_file($tmpname, $folder);
+    $filename = $_FILES["sub_category_image"]["name"];
+    $tmpname = $_FILES["sub_category_image"]["tmp_name"];
+    $folder = "../assets/category/uploads1/" . $filename;
+    move_uploaded_file($tmpname, $folder);
 
-       $target_dir = "assets/sub_category/uploads1/";
-       $uploads = $target_dir;
-       $destination = "assets/sub_category/destination1/";
-       $watermarkFile = "assets/category/watermark.png";
+    $target_dir = "assets/sub_category/uploads1/";
 
-       // Check if the file was uploaded without errors
-       if ($_FILES["sub_category_image"]["error"] == UPLOAD_ERR_OK) {
-              $target_file = $target_dir . basename($_FILES["sub_category_image"]["name"]);
-              $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    // Check if the file was uploaded without errors
+    if ($_FILES["sub_category_image"]["error"] == UPLOAD_ERR_OK) {
+        $target_file = $target_dir . basename($_FILES["sub_category_image"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-              // Check if the file is an image
-              $check = getimagesize($_FILES["sub_category_image"]["tmp_name"]);
-              if ($check === false) {
-                     echo "File is not an image.";
-                     exit;
-              }
+        // Check if the file is an image
+        $check = getimagesize($_FILES["sub_category_image"]["tmp_name"]);
+        if ($check === false) {
+            echo "File is not an image.";
+            exit;
+        }
 
-              // Check file extension
-              if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
-                     echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-                     exit;
-              }
+        // Check file extension
+        if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+            echo "Sorry, only JPG, JPEG, PNG files are allowed.";
+            exit;
+        }
 
-              // Move uploaded file to destination directory
-              if (!move_uploaded_file($_FILES["sub_category_image"]["tmp_name"], $target_file)) {
-                     echo "Sorry, there was an error uploading your file.";
-                     exit;
-              }
+        // Move uploaded file to destination directory
+        if (!move_uploaded_file($_FILES["sub_category_image"]["tmp_name"], $target_file)) {
+            echo "Sorry, there was an error uploading your file.";
+            exit;
+        }
 
-              // Apply watermark
-              $watermark = imagecreatefrompng($watermarkFile);
-              if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-                     $img = imagecreatefromjpeg($target_file);
-              }
-              elseif ($imageFileType == "png") {
-                     $img = imagecreatefrompng($target_file);
-              }
-              else {
-                     echo "Unsupported image format.";
-                     exit;
-              }
+        // Insert into database
+        $imagePath = $target_file; // Store the path to the uploaded image
+        $st = "INSERT INTO `sub_category`(`sub_category_name`, `category_name`, `sub_category_image`, `sub_cat_description`) VALUES ('$sub_category_name', '$category_name', '$imagePath', '$description')";
+        $res = mysqli_query($cn, $st) or die("Not Inserted");
 
-              $sx = imagesx($watermark);
-              $sy = imagesy($watermark);
-              $watermark_x = (imagesx($img) / 2) - ($sx / 2);
-              $watermark_y = (imagesy($img) / 2) - ($sy / 2);
-              $transparency = 50;
-              imagecopymerge($img, $watermark, $watermark_x, $watermark_y, 0, 0, $sx, $sy, $transparency);
-
-              // Save the watermarked image
-              $outputFile = $destination . basename($_FILES["sub_category_image"]["name"]);
-              if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-                     imagejpeg($img, $outputFile, 100);
-              }
-              elseif ($imageFileType == "png") {
-                     imagepng($img, $outputFile, 9);
-              }
-
-              // Clean up resources
-              imagedestroy($img);
-              imagedestroy($watermark);
-
-              // Insert into database
-              $imagePath = $outputFile; // Store the path to the watermarked image
-              $st = "INSERT INTO `sub_category`(`sub_category_name`, `category_name`, `sub_category_image`, `sub_cat_description`) VALUES ('$sub_category_name', '$category_name', '$imagePath', '$description')";
-              $res = mysqli_query($cn, $st) or die("Not Inserted");
-
-              // Redirect to a page where the user can view the uploaded image
-              header("location: http://localhost/vaishnodevi/admin/sub_category.php");
-              exit; // Ensure that no further code is executed after the redirection
-       }
-       else {
-              echo "File upload error.";
-       }
+        // Redirect to a page where the user can view the uploaded image
+        header("location: http://localhost/vaishnodevi/admin/sub_category.php");
+        exit; // Ensure that no further code is executed after the redirection
+    } else {
+        echo "File upload error.";
+    }
 }
 
 mysqli_close($cn);
 ?>
+
 
 <?php include 'includes/php/dbcon.php';?>
 <!DOCTYPE html>
