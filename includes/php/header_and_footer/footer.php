@@ -100,7 +100,7 @@
                                    <?php
                                           $cn = mysqli_connect("localhost", "root", "") or die ("Not connected");
                                           $db = mysqli_select_db($cn, "vaishnodevi_contact") or die ("Not connected");
-                                          $st1 = "SELECT * FROM `mob` WHERE id = 2";
+                                          $st1 = "SELECT * FROM `mob` WHERE id = 3";
                                           $res1 = mysqli_query($cn, $st1) or die("Not Inserted");
                                           while ($fld1 = mysqli_fetch_array($res1)) {
                                    ?>

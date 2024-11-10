@@ -32,7 +32,7 @@
 
               $st = "UPDATE `user` SET `username`='$username', `email_id`='$email', `role`='$role' WHERE `id` = '$id'";
               $res = mysqli_query($cn, $st) or die("Query Failed");
-              header('location: http://localhost/VAISHNODEVI_ADMIN_PANEL/dashboard.php');
+              header('location: http://localhost/vaishnodevi/admin/dashboard.php');
        }
        ?>
 

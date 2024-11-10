@@ -28,7 +28,7 @@
     if (isset($_POST['update_product'])) {
         $product_name = $_POST['product_name'];
         $category_name = $_POST['category_name'];
-        $sub_category_name = $_POST['sub_category_name'];
+        $sub_category_name = $_POST['price'];
         $description = $_POST['description'];
 
         // Handle file upload
@@ -41,9 +41,9 @@
             $product_image = $row['product_image']; // Keep existing image if no new image is uploaded
         }
 
-        $st = "UPDATE `product` SET `product_name`='$product_name', `category_name`='$category_name', `sub_category_name`='$sub_category_name', `product_image`='$product_image', `description`='$description' WHERE `id`='$id'";
+        $st = "UPDATE `product` SET `product_name`='$product_name', `category_name`='$category_name', `price`='$sub_category_name', `product_image`='$product_image', `description`='$description' WHERE `id`='$id'";
         $res = mysqli_query($cn, $st) or die("Not Inserted");
-        header('location: http://localhost/VAISHNODEVI_ADMIN_PANEL/product.php');
+        header('location: http://localhost/vaishnodevi/admin/product.php');
         exit;
     }
     ?>
@@ -71,19 +71,8 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="Sub Category Name" class="third">Sub Category Name:</label>
-            <select name="sub_category_name" id="sub_category_name" class="form-control">
-                <option value="Select Sub Category">Select Sub Category</option>
-                <?php
-                $st = "SELECT `id`, `sub_category_name` FROM `sub_category`";
-                $res = mysqli_query($cn, $st) or die("Query Failed");
-                while ($fld = mysqli_fetch_array($res)) {
-                ?>
-                    <option value="<?php echo $fld['id']; ?>" <?php echo ($fld['id'] == $row['sub_category_name']) ? 'selected' : ''; ?>><?php echo $fld['sub_category_name']; ?></option>
-                <?php
-                }
-                ?>
-            </select>
+            <label for="Sub Category Name" class="third">Price:</label>
+            <input type="number" name="price" class="form-control" value="<?php echo $row['price']; ?>">
         </div>
         <br>
         <div class="form-group">

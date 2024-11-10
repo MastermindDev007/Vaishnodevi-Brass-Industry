@@ -1,41 +1,48 @@
-/* about */
-*{
-     width: auto;
+/* breadcrumb */
+.breadcrumb-section {
+    background-color: black;
+    background-image: url('../../assets/img/bg.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
 }
-.breadcrumbs_bg{
-	min-height: 240px;
-	background-color: black;
-}
-.h3{
-	font-family: "Jost", sans-serif;
-	font-size: 40px;
-	color: white;
-	padding-top: 135px;
-	padding-left: 71px;
-	font-weight: 800;
+.breadcrumb-section h1{
+    color: #F3B44B;
+    padding-top: 200px;
+    padding-left: 50px;
 }
 .breadcrumb{
-	font-size: 18px;
-	margin-left: 1235px;
-	margin-top: -60px;
-	color: white;
-	font-weight: 700;
+    color: #F3B44B;
+    position: relative;
+    top: -40px;
+    display: flex;
+    font-size: 20px;
+    padding-left: 1200px;
+    list-style: none;
 }
-.breadcrumb li a{
-	color: white;
-	text-decoration: none;
+.breadcrumb_item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #F3B44B;
+    position: relative;
+    transition: color 0.7s ease;
 }
-.fa-angle-right{
-	letter-spacing: 0.5px;
-	padding-top: 15px;
+.breadcrumb_item a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #88A9C3;
+    transition: width 0.3s ease;
 }
-.breadcrumb li a:hover{
-	color: #F3B44B;
-	transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-	-ms-transition: 0.5s;
-	-o-transition: 0.5s;
+.breadcrumb_item a:hover::after {
+    width: 100%; /* Expand the width to 100% on hover */
+}
+.breadcrumb_item a:hover {
+    color: #88A9C3;
 }
 
 /* product section */
@@ -44,7 +51,7 @@
     margin-left: 90px;
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 150px;
 }
 .product-link{
     text-decoration: none;
@@ -176,4 +183,55 @@
 .modal-btn:hover {
     background-color: #122620;
     color: #F3B44B;
+}
+
+@media only screen and (max-width: 1024px){
+    /* breadcrumb */
+    .breadcrumb-section {
+      background-color: #122620;
+      background-image: url('../../assets/img/bg.webp');
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      width: 150%;
+    }
+    .breadcrumb-section h1{
+      color: #F3B44B;
+      padding-top: 350px;
+      padding-left: 50px;
+      font-weight: 600;
+      font-size: 60px;
+    }
+    .breadcrumb{
+      color: #F3B44B;
+      position: relative;
+      top: -40px;
+      font-size: 35px;
+      padding-left: 1200px;
+    }
+    .breadcrumb_item a {
+      display: inline-block;
+      text-decoration: none;
+      color: #F3B44B;
+      font-size: 35px;
+      position: relative;
+      transition: color 0.7s ease;
+    }
+    .breadcrumb_item a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #88A9C3;
+      transition: width 0.3s ease;
+    }
+    .breadcrumb_item a:hover::after {
+      width: 100%; /* Expand the width to 100% on hover */
+    }
+    .breadcrumb_item a:hover {
+      color: #88A9C3;
+    }
 }

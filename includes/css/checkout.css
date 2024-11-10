@@ -1,0 +1,296 @@
+body{
+    background-color: #d7ddf2;
+}
+.main-section {
+    background-image: radial-gradient(circle 500px at -3% 0%, rgba(247, 234, 163, 1) 30%, #F3B44B 70%, white 100%);
+    max-width: 94%;
+    height: 800px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.3); /* Add box shadow */
+}
+
+/* From Uiverse.io by AbanoubMagdy1 */ 
+.wave-group {
+    position: relative;
+}
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #666;
+    background: transparent;
+}
+.wave-group .input:focus {
+    outline: none;
+}
+.wave-group .label {
+    color: #666;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+}
+.wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .05s);
+}
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #2724f7;
+}
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+.wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #2724f7;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.wave-group .bar:before {
+    left: 50%;
+}
+.wave-group .bar:after {
+    right: 50%;
+}
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+    width: 50%;
+}
+.main-section .breadcrumb-section span{
+    position: relative;
+    top: 20px;
+    left: 90px;
+    color: #2724f7;
+    font-weight: 700;
+}
+.main-section .breadcrumb-section a{
+    text-decoration: none;
+}
+.heading-section h1{
+    margin-top: 50px;
+    margin-left: 90px;
+    font-weight: 600;
+    color: black;
+}
+.heading-section p{
+    margin-left: 90px;
+    font-weight: 400;
+    color: #666;
+}
+.tp-sub-section-heading p{
+    margin-top: 30px;
+    margin-left: 90px;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+.first-sub-section .one{
+    margin-left: 100px;
+    margin-top: 0px;
+}
+.first-sub-section .two{
+    margin-left: 400px;
+    margin-top: -45px;
+}
+.first-sub-section .three{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.first-sub-section .four{
+    margin-left: 400px;
+    margin-top: -45px;
+}
+.second-sub-section .five{
+    margin-left: 100px;
+    margin-top: 00px;
+}
+.second-sub-section .six{
+    margin-left: 400px;
+    margin-top: -45px;
+}
+.second-sub-section .seven{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.second-sub-section .eight{
+    margin-left: 400px;
+    margin-top: -45px;
+    position: relative;
+    left: -200px;
+}
+.second-sub-section .eight label{
+    padding-left: 200px;
+}
+.second-sub-section .eight .bar{
+    margin-left: 200px;
+}
+.radio-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.radio-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15px;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.radio-button__custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    transition: all 0.3s ease;
+}
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+    background-color: #2724f7;
+    border-color: transparent;
+    transform: scale(0.8);
+    box-shadow: 0 0 20px #2724f780;
+}
+.radio-button__input:checked + .radio-button__label {
+    color: #2724f7;
+}
+.radio-button__label:hover .radio-button__custom {
+    transform: scale(1.2);
+    border-color: #2724f7;
+    box-shadow: 0 0 20px #2724f780;
+}
+.place-order-section {
+    background-color: white;
+    max-width: 350px;
+    position: relative;
+    top: -700px;
+    height: 500px;
+    left: 850px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); /* Small default box shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.place-order-section:hover {
+    box-shadow: 5px 6px 30px rgba(0, 0, 0, 0.98); /* Larger box shadow on hover */
+}
+
+.place-order-section .counter-items p{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px;
+    color: black;
+}
+.place-order-section hr{
+    width: 85%;
+    margin-left: 25px;
+    color: black;
+    /* text-align: center; */
+}
+.place-order-section .total1{
+    padding-top: 30px;
+    margin-left: 40px;
+    color: #666;
+}
+.place-order-section .total2{
+    margin-left: 40px;
+    color: #666;
+}
+.place-order-section .total3{
+    margin-left: 40px;
+    padding-bottom: 30px;
+    color: #666;
+}
+.place-order-section .total4{
+    margin-left: 40px;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+.place-order-section .total4 .span2{
+    margin-left: 50px;
+    margin-top: -10px;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+}
+.place-order-section .span2{
+    margin-left: 120px;
+    color: black;
+    font-weight: 600;
+}
+.place-order-section input[type='submit'] {
+    border: none;
+    outline: none;
+    width: 88%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #2724f7;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.place-order-section input[type='submit']:hover {
+    background-color: #f75c24;
+    box-shadow: 0px 10px 20px rgba(39, 36, 247, 0.3);
+    transform: translateY(-3px);
+}
+.place-order-section a{
+    text-decoration: none;
+}
+.alert-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: 300px;
+    display: none;
+}

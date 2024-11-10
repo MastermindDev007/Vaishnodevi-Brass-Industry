@@ -3,7 +3,7 @@
 if (isset($_POST['add_category'])) {
     $product_name = $_POST['product_name'];
     $category_name = $_POST['category_name'];
-    $sub_category_name = $_POST['sub_category_name'];
+    $sub_category_name = $_POST['price'];
     $description = $_POST['description'];
 
     $filename = $_FILES["category_image"]["name"];
@@ -38,7 +38,7 @@ if (isset($_POST['add_category'])) {
 
         // Insert into database
         $imagePath = $target_file; // Store the path to the uploaded image
-        $st = "INSERT INTO `product`(`product_name`, `category_name`, `sub_category_name`, `product_image`, `description`) VALUES ('$product_name', '$category_name', '$sub_category_name', '$imagePath', '$description')";
+        $st = "INSERT INTO `product`(`product_name`, `category_name`, `price`, `product_image`, `description`) VALUES ('$product_name', '$category_name', '$sub_category_name', '$imagePath', '$description')";
         $res = mysqli_query($cn, $st) or die("Not Inserted");
 
         // Redirect to a page where the user can view the uploaded image
@@ -103,18 +103,7 @@ mysqli_close($cn);
 							</select>
 							
 							<label for="Sub-Category Name" class="second">Sub-Category Name:</label>
-							<select name="sub_category_name" id="sub_category_name" class="i2">
-								<option value="Select Sub-Category">Select Sub-Category</option>
-								<?php
-									$st = "SELECT `id`, `sub_category_name` FROM `sub_category` WHERE 1";
-									$res = mysqli_query($cn, $st) or die("Not Inserted");
-									while ($fld=mysqli_fetch_array($res)) {
-								?>
-									<option value="<?php echo $fld['id']?>"><?php echo $fld['sub_category_name']?></option>
-								<?php
-									}
-								?>
-							</select>
+							<input type="number" name="price" id="price" placeholder="Enter price Name Here" class="i2" required>
 						
 							<label for="Category Image" class="third">Category Image:</label>
 							<input type="file" name="category_image" id="category_image" class="i3" required>
@@ -137,7 +126,7 @@ mysqli_close($cn);
 						<th scope="col">ID</th>
 						<th scope="col">Product_Name</th>
 						<th scope="col">Category_Name</th>
-						<th scope="col">Sub_Category_Name</th>
+						<th scope="col">Price</th>
 						<th scope="col">Product_Image</th>
 						<th scope="col">Description</th>
 						<th scope="col">Update</th>
@@ -163,16 +152,7 @@ mysqli_close($cn);
 									}
 								?>
 							</td>
-							<td>
-								<?php
-									$b = $fld["sub_category_name"];
-									$st3 = "SELECT * FROM `sub_category` WHERE id='$b'";
-									$res3 = mysqli_query($cn, $st3) or die("Not Inserted");
-									while ($subcat=mysqli_fetch_array($res3)) {
-										echo $subcat['sub_category_name'];
-									}
-								?>
-							</td>
+							<td><?php echo $fld['price']?></td>
 							<td>
 								<img src="<?php echo $fld['product_image']?>" width="150px" alt="Uploaded Image">
 							</td>

@@ -1,5 +1,5 @@
-<?php include 'admin/includes/php/dbcon.php'; ?>
-<?php include 'admin/includes/php/dbcon2.php'; ?>
+<?php include 'includes/php/database/dbcon.php'; ?>
+<?php //include 'includes/php/database/dbcon2.php'; ?>
 <header>
        <div class="container1">
               <p class="p1">

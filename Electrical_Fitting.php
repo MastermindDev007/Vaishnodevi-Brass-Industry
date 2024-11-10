@@ -1,5 +1,7 @@
-<?php include 'admin/includes/php/dbcon.php'; ?>
-<?php include 'admin/includes/php/dbcon2.php'; ?>
+<?php 
+    include 'includes/php/database/dbcon.php';
+    session_start();
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,45 +25,81 @@
        <script src='https://www.google.com/recaptcha/api.js'></script>
        <link rel="stylesheet" href="includes/css/footer.css">
        <link rel="stylesheet" href="includes/css/header.css">
-       <link rel="stylesheet" href="includes/css/Electrical_Fitting.css">
+       <link rel="stylesheet" href="includes/css/product1.css">
 </head>
 
 <body>
-       <?php include 'includes/php/database/dbcon.php' ?>
        <?php include 'includes/php/header_and_footer/header.php' ?>
-       <div class="breadcrumbs_bg">
-              <h3 class="h3">
-                     Product
-              </h3>
-              <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.php">Home</a></li> &nbsp &nbsp
-                     <i class="fa-solid fa-angle-right" style="color: #ffffff;"></i> &nbsp &nbsp
-                     <li class="breadcrumb-item" aria-current="page">Product</li>
-              </ol>
+       <div class="breadcrumb-section">
+            <h1>Brass Electrical Fitting</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb_item"><a href="index.php">Home</a>&nbsp/&nbsp</li>
+                <li class="breadcrumb_item active">Product</li>
+            </ol>
        </div>
-       <div class="products">
-              <div class="row">
-                     <?php
-                     $cn = mysqli_connect("localhost", "root", "") or die ("Not connected");
-                     $db = mysqli_select_db($cn, "vaishnodevi") or die ("Not connected");
-                     $st = "SELECT * FROM `product` WHERE category_name=49";
-                     $res = mysqli_query($cn, $st) or die("Not Inserted");
-                     while ($fld = mysqli_fetch_array($res)) {
-                     ?>
-                            <div class="card1 shadow">
-                                   <a href="Brass_Bush.php">
-                                          <img src="<?php echo 'admin/' . $fld['product_image'] ?>" alt="Uploaded images">
-                                          <h3 class="tp-product-title">
-                                                 <?php echo $fld['product_name'] ?>
-                                          </h3>
-                                   </a>
-                            </div>
-                     <?php
-                     }
-                     ?>
-              </div>
-       </div>
+       
+       <div class="product-section">
+            <?php
+                $cn = mysqli_connect("localhost", "root", "") or die ("Not connected");
+                $db = mysqli_select_db($cn, "vaishnodevi") or die ("Not connected");
+                $st3 = "SELECT * FROM `product` WHERE `category_name` = 49";
+                $res3 = mysqli_query($cn, $st3) or die("Not Inserted");
+                while ($fld3 = mysqli_fetch_array($res3)) {
+            ?>
+            <div class="product-body">
+                <div class="tp-product-img">
+                    <img src="<?php echo 'admin/' . $fld3['product_image'] ?>">
+                </div>
+                <div class="tp-product-title">
+                    <span class="price">
+                        ₹ <?php echo $fld3['price'] ?>
+                    </span>
+                    <br>
+                    <span class="product-name">
+                    <?php echo $fld3['product_name'] ?>
+                    </span>
+                    <!-- Modal Button -->
+                    <button class="open-modal-btn" type="button" data-product-id="<?php echo $fld3['id']; ?>">Buy Now</button>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="myModal-<?php echo $fld3['id']; ?>" class="modal">
+                <div class="modal-content">
+                    <span class="close" data-product-id="<?php echo $fld3['id']; ?>">&times;</span>
+                    <h2>Product Details</h2>
+                    <p>
+                        <?php echo $fld3['description'] ?>
+                    </p>
+                    <form action="cart.php?action=add&id=<?php echo $fld3['id']; ?>" method="post">
+                        <select name="qty" class="form-select-sm">
+                            <?php for ($i=1; $i <= 10 ; $i++) { ?>
+                                <option><?php echo $i; ?></option>    
+                            <?php } ?>
+                        </select>
+                        <?php if (!isset($_SESSION["loggedin"])) { ?>
+                            <a href="login.php" style="text-decoration: none;">
+                                <button type="button" class="modal-btn">Login to Add to Cart</button>
+                            </a>
+                        <?php } else { ?>
+                            <button type="submit" class="modal-btn">Add to Cart</button>
+                        <?php } ?>
+                    </form>
+                </div>
+            </div>
+            <?php
+                }
+            ?>
+        </div>
        <?php include 'includes/php/header_and_footer/footer.php' ?>
+       <!-- bootstrap js -->
+       <!-- <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+       <!-- font awesome js -->
+       <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+
+       <!-- header scroll -->
+       <script src="includes/js/modal_btn.js"></script>
 </body>
 
 </html>
